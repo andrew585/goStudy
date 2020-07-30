@@ -3,6 +3,9 @@ andrew平时学习练习的代码
 
 ## 编译
 
+必须先安装以下依赖
+go get github.com/go-task/task
+
 ```sh
 task build
 ```
