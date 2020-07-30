@@ -1,2 +1,2 @@
 # goStudy
-andrew平时学习联系的代码
+andrew平时学习练习的代码
