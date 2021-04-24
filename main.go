@@ -4,9 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"goStudy/ginutils"
-	"goStudy/gormodel"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"regexp"
 )
@@ -137,14 +135,14 @@ func main() {
 	}*/
 
 	//-----gin
-	err := gormodel.Init()
-	if err != nil {
-		log.Println(err)
-		return
-	}
+	//err := gormodel.Init()
+	//if err != nil {
+	//	log.Println(err)
+	//	return
+	//}
 
 	r := ginutils.InitGin()
-	r.Run()
+	_ = r.Run()
 }
 
 func getEmail() {

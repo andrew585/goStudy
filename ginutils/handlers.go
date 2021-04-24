@@ -4,8 +4,10 @@ import (
 	"encoding/json"
 	"github.com/gin-gonic/gin"
 	"goStudy/gormodel"
+	"goStudy/tdx"
 	"io/ioutil"
 	"log"
+	"strconv"
 )
 
 func GetHander() gin.HandlerFunc {
@@ -30,6 +32,36 @@ func postPerson() gin.HandlerFunc {
 			"status":  "posted",
 			"message": message,
 			"nick":    nick,
+		})
+	}
+}
+
+func getTdxData() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		code := c.Query("code")
+		n := c.Query("parameter")
+
+		dayM, err := strconv.Atoi(n)
+		if err != nil {
+			c.JSON(405, gin.H{
+				"status":  "err",
+				"message": err.Error(),
+			})
+		}
+		//计算atr
+		atr, dataArr, err := tdx.CalculationAtr(code, dayM)
+		if err != nil {
+			c.JSON(405, gin.H{
+				"status":  "err",
+				"message": err.Error(),
+			})
+		}
+
+		//将获取的数组倒叙排序
+		c.JSON(405, gin.H{
+			"status": "ok",
+			"data":   dataArr,
+			"atr":    atr,
 		})
 	}
 }

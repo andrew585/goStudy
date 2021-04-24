@@ -6,5 +6,6 @@ func InitGin() *gin.Engine {
 	r := gin.Default()
 	r.GET("ping", GetHander())
 	r.POST("create", postPerson())
+	r.GET("art", getTdxData())
 	return r
 }
