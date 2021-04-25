@@ -48,11 +48,11 @@ type DayQuotation struct {
 func (day DayQuotation) toString() string {
 	return "日期" + strconv.Itoa(int(day.Date)) +
 		"开盘价(元):" + strconv.FormatFloat(float64(day.Open), 'f', 2, 32) +
-		"最高价(元)" + strconv.FormatFloat(float64(day.High), 'f', 2, 32) +
-		"最低价(元)" + strconv.FormatFloat(float64(day.Low), 'f', 2, 32) +
-		"收盘价(元)" + strconv.FormatFloat(float64(day.Close), 'f', 2, 32) +
-		"成交金额(元)" + strconv.FormatFloat(float64(day.Amount), 'f', 2, 32) +
-		"成交量" + strconv.FormatFloat(float64(day.Qty), 'f', 2, 32)
+		"最高价(元):" + strconv.FormatFloat(float64(day.High), 'f', 2, 32) +
+		"最低价(元):" + strconv.FormatFloat(float64(day.Low), 'f', 2, 32) +
+		"收盘价(元):" + strconv.FormatFloat(float64(day.Close), 'f', 2, 32) +
+		"成交金额(元):" + strconv.FormatFloat(float64(day.Amount), 'f', 2, 32) +
+		"成交量:" + strconv.FormatFloat(float64(day.Qty), 'f', 2, 32)
 
 }
 
